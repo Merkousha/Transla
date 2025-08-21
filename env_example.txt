@@ -1,0 +1,33 @@
+# Book Translator Configuration
+# Copy this file to .env and fill in your actual values
+
+# OpenAI-Compatible Service Configuration (Recommended)
+OPENAI_API_KEY=your-api-key-here
+
+# Model Configuration (optional - defaults to gpt-4o)
+OPENAI_MODEL=gpt-4o
+
+# Base URL (optional - defaults to Avalai service)
+OPENAI_BASE_URL=https://api.avalai.ir/v1
+
+# Example configurations:
+
+# 1. Standard OpenAI
+# OPENAI_API_KEY=sk-your-openai-api-key-here
+# OPENAI_MODEL=gpt-4o
+# OPENAI_BASE_URL=https://api.openai.com/v1
+
+# 2. Azure OpenAI
+# OPENAI_API_KEY=your-azure-api-key
+# OPENAI_MODEL=gpt-35-turbo
+# OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/your-deployment
+
+# 3. Local Models (Ollama, etc.)
+# OPENAI_API_KEY=not-needed
+# OPENAI_BASE_URL=http://localhost:11434/v1
+# OPENAI_MODEL=llama2
+
+# 4. Avalai Service (Current Setup)
+OPENAI_API_KEY=your-api-key-here
+OPENAI_MODEL=gpt-4o
+OPENAI_BASE_URL=https://api.avalai.ir/v1
