@@ -16,32 +16,44 @@ An automated book translation program that uses artificial intelligence to trans
 
 ## 🚀 Quick Start
 
-### 1. Installation
+### 1. Prerequisites
+
+- Python 3.10 or newer
+- An OpenAI-compatible API key (Avalai, OpenAI, Azure OpenAI, or a local service)
+- Poppler or another PDF reader is **not** required—`PyPDF2` handles parsing internally
+
+### 2. Installation
 
 ```bash
+# Create and activate a virtual environment (recommended)
+python -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+
 # Install required packages
 pip install -r requirements.txt
 ```
 
-### 2. Configuration
+### 3. Configuration
 
 ```bash
 # Copy environment template
-cp env_example.txt .env
+cp .env.example .env            # macOS/Linux
+copy .env.example .env          # Windows PowerShell
 
-# Edit .env file with your API key
+# Edit the new .env file with your API key and optional overrides
 OPENAI_API_KEY=your-api-key-here
 OPENAI_MODEL=gpt-4o
+OPENAI_BASE_URL=https://api.avalai.ir/v1
 ```
 
-### 3. Test Connection
+### 4. Test Connection
 
 ```bash
 # Test OpenAI-compatible service connection
 python test_openai.py
 ```
 
-### 4. Run Translator
+### 5. Run Translator
 
 ```bash
 # Translate your PDF book
@@ -251,13 +263,36 @@ Endpoint: https://api.avalai.ir/v1
 - Use environment variables for sensitive data
 - Regularly rotate your API keys
 
+## 🧭 Project Structure
+
+```
+.
+├── .env.example               # Template for environment variables
+├── LICENSE                    # MIT License
+├── README.md
+├── openai_translator.py       # Main translation script
+├── requirements.txt           # Python dependencies
+├── test_openai.py             # Connection and translation smoke test
+└── translated_book_avalai.docx# Sample output document
+```
+
+## 🧪 Testing
+
+The repository doesn't depend on a test framework, but the bundled smoke test helps confirm your credentials and service availability:
+
+```bash
+python test_openai.py
+```
+
+If you add features, consider contributing automated tests to keep coverage improving.
+
 ## 📝 License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the [MIT License](./LICENSE).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please review [`CONTRIBUTING.md`](./CONTRIBUTING.md) for guidelines on proposing changes, running checks, and submitting pull requests. By participating, you agree to uphold the expectations outlined in our [`Code of Conduct`](./CODE_OF_CONDUCT.md).
 
 ## 📞 Support
 
